@@ -15,27 +15,49 @@
 </head>
 
 <body class="">
-    <!-- Navbar -->
-    <section class="bg-black py-3">
-        <div class="flex justify-between items-center max-w-7xl mx-auto">
-            <h1 class="font_noto font-extrabold text-4xl text-[#7DFF7D]">JobsPortal</h1>
-            <ul class="flex gap-x-10 items-center font_noto text-[#62FF62]">
-                <li><a href="">Login</a></li>
-                <li><a href="">Sign up</a></li>
-                <li class="px-2 py-3 bg-[#148014] rounded-lg text-white font-bold"><a href="">Post a Job</a></li>
-            </ul>
-        </div>
-    </section>
+<!-- Navbar -->
+<section class="bg-black py-3">
+    <div class="flex justify-between items-center max-w-7xl mx-auto px-5">
+      <h1 class="font_noto font-extrabold text-4xl text-[#7DFF7D]">JobsPortal</h1>
+      <button id="menu-toggle" class="lg:hidden text-[#62FF62] text-3xl">
+        ☰
+      </button>
+  
+      <ul
+        id="menu"
+        class="hidden lg:flex gap-x-10 items-center font_noto text-[#62FF62] lg:space-y-0 space-y-5 flex-col lg:flex-row bg-black w-full lg:w-auto p-5 lg:p-0 absolute lg:static top-16 left-0 z-10"
+      >
+        <li><a href="">Login</a></li>
+        <li><a href="">Sign up</a></li>
+        <li class="px-2 py-3 bg-[#148014] rounded-lg text-white font-bold">
+          <a href="">Post a Job</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  
+  <script>
+   
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleButton = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+  
+      toggleButton.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    });
+  </script>
 
     <!-- ---------register content---------- -->
     <section class="font-poppins pb-10">
-        <div class="max-w-6xl mx-auto">
+        <div class="max-w-6xl mx-auto px-4">
             <h4 class="text-3xl font_noto text-[#148014] mb-6 mt-5">Job Portal</h4>
-
-            <div class="grid grid-cols-2 items-center justify-between gap-x-28">
-                <div class="space-y-2 ">
+    
+            <div class="grid grid-cols-1 md:grid-cols-2 items-center justify-between gap-x-10">
+                <!-- Registration Form Section -->
+                <div class="space-y-2">
                     <h1 class="font-bold text-4xl">Register Now</h1>
-                    <p>Hi, Welcome back 👋 </p>
+                    <p>Hi, Welcome back 👋</p>
                     <div class="flex items-center gap-3 bg-[#148014] text-white px-4 py-1.5 rounded-lg justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
                             <path
@@ -53,12 +75,12 @@
                         </svg>
                         <p>Login with Google</p>
                     </div>
-                    <div class="grid grid-cols-3 justify-center  items-center pt-3 ">
-                        <hr class="">
+                    <div class="grid grid-cols-3 justify-center items-center pt-3">
+                        <hr>
                         <p class="text-center text-gray-400">or Login with Email</p>
-                        <hr class="">
+                        <hr>
                     </div>
-
+    
                     <!-- Form -->
                     <form action="" class="space-y-4">
                         <div class="flex flex-col space-y-1">
@@ -86,51 +108,53 @@
                         </div>
                         <div class="text-center">
                             <h1>Not yet registered yet? <span class="text-[#148014]">Already Have an account?</span> <a
-                                    href=""><span class="underline">Register</span></a></h1>
+                                    href=""><span class="underline">Login</span></a></h1>
                         </div>
                     </form>
                 </div>
-
-                <div>
-                    <img src="./images/signup.png" alt="" class="">
+    
+                <!-- Image Section -->
+                <div class="hidden md:block">
+                    <img src="./images/signup.png" alt="Sign Up Illustration" class="w-full">
                 </div>
             </div>
         </div>
     </section>
+    
 
-    <!-- -----------------footer----------------- -->
-    <footer class="bg-black">
-        <footer class="footer text-base-content p-10 text-white font-poppins max-w-7xl mx-auto">
-            <aside>
-               <h3 class="font_noto font-extrabold text-4xl text-[#7DFF7D]">JobsPortal</h3>
-               <p class="text-xl font_noto">AI Based Jobs Portal</p>
-            </aside>
-            <nav>
-                <h6 class="footer-title">Services</h6>
-                <a class="link link-hover">Branding</a>
-                <a class="link link-hover">Design</a>
-                <a class="link link-hover">Marketing</a>
-                <a class="link link-hover">Advertisement</a>
-            </nav>
-            <nav>
-                <h6 class="footer-title">Company</h6>
-                <a class="link link-hover">About us</a>
-                <a class="link link-hover">Contact</a>
-                <a class="link link-hover">Jobs</a>
-                <a class="link link-hover">Press kit</a>
-            </nav>
-            <nav>
-                <h6 class="footer-title">Legal</h6>
-                <a class="link link-hover">Terms of use</a>
-                <a class="link link-hover">Privacy policy</a>
-                <a class="link link-hover">Cookie policy</a>
-            </nav>
+       <!-- -----------------footer----------------- -->
+       <footer class="bg-black mt-7">
+        <footer class="footer text-base-content p-10 text-white font-poppins max-w-7xl mx-auto grid lg:grid-cols-4 sm:grid-cols-1 gap-y-7">
+          <aside>
+            <h3 class="font_noto font-extrabold text-4xl text-[#7DFF7D]">JobsPortal</h3>
+            <p class="text-xl font_noto">AI Based Jobs Portal</p>
+          </aside>
+          <nav>
+            <h6 class="footer-title">Services</h6>
+            <a class="link link-hover">Branding</a>
+            <a class="link link-hover">Design</a>
+            <a class="link link-hover">Marketing</a>
+            <a class="link link-hover">Advertisement</a>
+          </nav>
+          <nav>
+            <h6 class="footer-title">Company</h6>
+            <a class="link link-hover">About us</a>
+            <a class="link link-hover">Contact</a>
+            <a class="link link-hover">Jobs</a>
+            <a class="link link-hover">Press kit</a>
+          </nav>
+          <nav>
+            <h6 class="footer-title">Legal</h6>
+            <a class="link link-hover">Terms of use</a>
+            <a class="link link-hover">Privacy policy</a>
+            <a class="link link-hover">Cookie policy</a>
+          </nav>
         </footer>
+      
         <div class="text-center text-gray-300 pb-10">
-            <p>© 2024 Jobs Portal Designed By Md Al Fuad</p>
+          <p>© 2024 Jobs Portal Designed By Md Al Fuad</p>
         </div>
-
-    </footer>
+      </footer>
 </body>
 
 </html>

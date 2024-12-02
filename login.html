@@ -15,122 +15,146 @@
 </head>
 
 <body class="">
-    <!-- Navbar -->
-    <section class="bg-black py-3">
-        <div class="flex justify-between items-center max-w-7xl mx-auto">
-            <h1 class="font_noto font-extrabold text-4xl text-[#7DFF7D]">JobsPortal</h1>
-            <ul class="flex gap-x-10 items-center font_noto text-[#62FF62]">
-                <li><a href="">Login</a></li>
-                <li><a href="">Sign up</a></li>
-                <li class="px-2 py-3 bg-[#148014] rounded-lg text-white font-bold"><a href="">Post a Job</a></li>
-            </ul>
-        </div>
-    </section>
+<!-- Navbar -->
+<section class="bg-black py-3">
+    <div class="flex justify-between items-center max-w-7xl mx-auto px-5">
+      <h1 class="font_noto font-extrabold text-4xl text-[#7DFF7D]">JobsPortal</h1>
+      <button id="menu-toggle" class="lg:hidden text-[#62FF62] text-3xl">
+        ☰
+      </button>
+  
+      <ul
+        id="menu"
+        class="hidden lg:flex gap-x-10 items-center font_noto text-[#62FF62] lg:space-y-0 space-y-5 flex-col lg:flex-row bg-black w-full lg:w-auto p-5 lg:p-0 absolute lg:static top-16 left-0 z-10"
+      >
+        <li><a href="">Login</a></li>
+        <li><a href="">Sign up</a></li>
+        <li class="px-2 py-3 bg-[#148014] rounded-lg text-white font-bold">
+          <a href="">Post a Job</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  
+  <script>
+   
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleButton = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+  
+      toggleButton.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    });
+  </script>
 
-    <!-- ---------login content---------- -->
-    <section class="font-poppins pb-10">
-        <div class="max-w-6xl mx-auto">
-            <h4 class="text-3xl font_noto text-[#148014] mb-6 mt-5">Job Portal</h4>
+ <!-- ---------login content---------- -->
+<section class="font-poppins pb-10">
+    <div class="max-w-6xl mx-auto px-4">
+        <h4 class="text-3xl font_noto text-[#148014] mb-6 mt-5">Job Portal</h4>
 
-            <div class="grid grid-cols-2 items-center justify-between gap-x-28">
-                <div class="space-y-2 ">
-                    <h1 class="font-bold text-4xl">Log In</h1>
-                    <p>Hi, Welcome back 👋 </p>
-                    <div class="flex items-center gap-3 bg-[#148014] text-white px-4 py-1.5 rounded-lg justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-                            <path
-                                d="M25.4397 11.7151H24.4999V11.6667H13.9999V16.3334H20.5933C19.6314 19.05 17.0467 21 13.9999 21C10.1342 21 6.99992 17.8658 6.99992 14C6.99992 10.1343 10.1342 7.00004 13.9999 7.00004C15.7843 7.00004 17.4078 7.67321 18.6438 8.77279L21.9438 5.47287C19.8601 3.53096 17.0729 2.33337 13.9999 2.33337C7.557 2.33337 2.33325 7.55712 2.33325 14C2.33325 20.443 7.557 25.6667 13.9999 25.6667C20.4428 25.6667 25.6666 20.443 25.6666 14C25.6666 13.2178 25.5861 12.4542 25.4397 11.7151Z"
-                                fill="#FFC107" />
-                            <path
-                                d="M3.67847 8.56979L7.51155 11.3809C8.54872 8.81304 11.0606 7.00004 14 7.00004C15.7844 7.00004 17.4078 7.67321 18.6439 8.77279L21.9438 5.47287C19.8601 3.53096 17.073 2.33337 14 2.33337C9.5188 2.33337 5.63263 4.86329 3.67847 8.56979Z"
-                                fill="#FF3D00" />
-                            <path
-                                d="M14 25.6667C17.0135 25.6667 19.7517 24.5135 21.8219 22.638L18.2111 19.5825C17.0004 20.5033 15.521 21.0012 14 21C10.9655 21 8.38894 19.0651 7.41827 16.3649L3.61377 19.2961C5.5446 23.0744 9.46577 25.6667 14 25.6667Z"
-                                fill="#4CAF50" />
-                            <path
-                                d="M25.4398 11.715H24.5V11.6666H14V16.3333H20.5934C20.1333 17.6262 19.3045 18.756 18.2093 19.583L18.2111 19.5819L21.8219 22.6374C21.5664 22.8695 25.6667 19.8333 25.6667 14C25.6667 13.2177 25.5862 12.4541 25.4398 11.715Z"
-                                fill="#1976D2" />
-                        </svg>
-                        <p>Login with Google</p>
-                    </div>
-                    <div class="grid grid-cols-3 justify-center  items-center pt-3 ">
-                        <hr class="">
-                        <p class="text-center text-gray-400">or Login with Email</p>
-                        <hr class="">
-                    </div>
-
-                    <!-- Form -->
-                    <form action="" class="space-y-4">
-                        <div class="flex flex-col space-y-1">
-                            <label for="email" class="font-semibold">Email</label>
-                            <input type="email" name="email" id="email"
-                                class="py-2 pl-3 focus:outline-none rounded bg-[#148014] placeholder-slate-200 text-white"
-                                placeholder="Enter your email">
-                        </div>
-                        <div class="flex flex-col space-y-1">
-                            <label for="password" class="font-semibold">Password</label>
-                            <input type="password" name="password" id="password"
-                                class="py-2 pl-3 focus:outline-none rounded bg-[#148014] placeholder-slate-200 text-white"
-                                placeholder="Enter your password">
-                        </div>
-                        <div class="flex justify-between">
-                            <div class="flex items-center gap-x-2">
-                                <input type="checkbox" name="" id="">
-                                <p class="font-semibold">Remember Me</p>
-                            </div>
-                            <p class="text-[#474BCA] font-semibold">Forgot password</p>
-                        </div>
-                        <div
-                            class="flex items-center gap-3 bg-[#148014] text-white px-4 py-2 rounded-lg justify-center">
-                            Login
-                        </div>
-                        <div class="text-center">
-                            <h1>Not yet registered yet? <span class="text-[#148014]">Create New Account</span> <a
-                                    href=""><span class="underline">Sing up</span></a></h1>
-                        </div>
-                    </form>
+        <div class="grid grid-cols-1 md:grid-cols-2 items-center justify-between gap-x-10">
+            <!-- Login Form Section -->
+            <div class="space-y-2">
+                <h1 class="font-bold text-4xl">Log In</h1>
+                <p>Hi, Welcome back 👋</p>
+                <div class="flex items-center gap-3 bg-[#148014] text-white px-4 py-1.5 rounded-lg justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                        <path
+                            d="M25.4397 11.7151H24.4999V11.6667H13.9999V16.3334H20.5933C19.6314 19.05 17.0467 21 13.9999 21C10.1342 21 6.99992 17.8658 6.99992 14C6.99992 10.1343 10.1342 7.00004 13.9999 7.00004C15.7843 7.00004 17.4078 7.67321 18.6438 8.77279L21.9438 5.47287C19.8601 3.53096 17.0729 2.33337 13.9999 2.33337C7.557 2.33337 2.33325 7.55712 2.33325 14C2.33325 20.443 7.557 25.6667 13.9999 25.6667C20.4428 25.6667 25.6666 20.443 25.6666 14C25.6666 13.2178 25.5861 12.4542 25.4397 11.7151Z"
+                            fill="#FFC107" />
+                        <path
+                            d="M3.67847 8.56979L7.51155 11.3809C8.54872 8.81304 11.0606 7.00004 14 7.00004C15.7844 7.00004 17.4078 7.67321 18.6439 8.77279L21.9438 5.47287C19.8601 3.53096 17.073 2.33337 14 2.33337C9.5188 2.33337 5.63263 4.86329 3.67847 8.56979Z"
+                            fill="#FF3D00" />
+                        <path
+                            d="M14 25.6667C17.0135 25.6667 19.7517 24.5135 21.8219 22.638L18.2111 19.5825C17.0004 20.5033 15.521 21.0012 14 21C10.9655 21 8.38894 19.0651 7.41827 16.3649L3.61377 19.2961C5.5446 23.0744 9.46577 25.6667 14 25.6667Z"
+                            fill="#4CAF50" />
+                        <path
+                            d="M25.4398 11.715H24.5V11.6666H14V16.3333H20.5934C20.1333 17.6262 19.3045 18.756 18.2093 19.583L18.2111 19.5819L21.8219 22.6374C21.5664 22.8695 25.6667 19.8333 25.6667 14C25.6667 13.2177 25.5862 12.4541 25.4398 11.715Z"
+                            fill="#1976D2" />
+                    </svg>
+                    <p>Login with Google</p>
+                </div>
+                <div class="grid grid-cols-3 justify-center items-center pt-3">
+                    <hr>
+                    <p class="text-center text-gray-400">or Login with Email</p>
+                    <hr>
                 </div>
 
-                <div>
-                    <img src="./images/signup.png" alt="" class="">
-                </div>
+                <!-- Form -->
+                <form action="" class="space-y-4">
+                    <div class="flex flex-col space-y-1">
+                        <label for="email" class="font-semibold">Email</label>
+                        <input type="email" name="email" id="email"
+                            class="py-2 pl-3 focus:outline-none rounded bg-[#148014] placeholder-slate-200 text-white"
+                            placeholder="Enter your email">
+                    </div>
+                    <div class="flex flex-col space-y-1">
+                        <label for="password" class="font-semibold">Password</label>
+                        <input type="password" name="password" id="password"
+                            class="py-2 pl-3 focus:outline-none rounded bg-[#148014] placeholder-slate-200 text-white"
+                            placeholder="Enter your password">
+                    </div>
+                    <div class="flex justify-between">
+                        <div class="flex items-center gap-x-2">
+                            <input type="checkbox" name="" id="">
+                            <p class="font-semibold">Remember Me</p>
+                        </div>
+                        <p class="text-[#474BCA] font-semibold">Forgot password</p>
+                    </div>
+                    <div
+                        class="flex items-center gap-3 bg-[#148014] text-white px-4 py-2 rounded-lg justify-center">
+                        Login
+                    </div>
+                    <div class="text-center">
+                        <h1>Not yet registered yet? <span class="text-[#148014]">Create New Account</span> <a
+                                href=""><span class="underline">Sign up</span></a></h1>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Image Section -->
+            <div class="hidden md:block">
+                <img src="./images/signup.png" alt="Sign Up Illustration" class="w-full">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- -----------------footer----------------- -->
-    <footer class="bg-black">
-        <footer class="footer text-base-content p-10 text-white font-poppins max-w-7xl mx-auto">
-            <aside>
-               <h3 class="font_noto font-extrabold text-4xl text-[#7DFF7D]">JobsPortal</h3>
-               <p class="text-xl font_noto">AI Based Jobs Portal</p>
-            </aside>
-            <nav>
-                <h6 class="footer-title">Services</h6>
-                <a class="link link-hover">Branding</a>
-                <a class="link link-hover">Design</a>
-                <a class="link link-hover">Marketing</a>
-                <a class="link link-hover">Advertisement</a>
-            </nav>
-            <nav>
-                <h6 class="footer-title">Company</h6>
-                <a class="link link-hover">About us</a>
-                <a class="link link-hover">Contact</a>
-                <a class="link link-hover">Jobs</a>
-                <a class="link link-hover">Press kit</a>
-            </nav>
-            <nav>
-                <h6 class="footer-title">Legal</h6>
-                <a class="link link-hover">Terms of use</a>
-                <a class="link link-hover">Privacy policy</a>
-                <a class="link link-hover">Cookie policy</a>
-            </nav>
+
+       <!-- -----------------footer----------------- -->
+       <footer class="bg-black mt-7">
+        <footer class="footer text-base-content p-10 text-white font-poppins max-w-7xl mx-auto grid lg:grid-cols-4 sm:grid-cols-1 gap-y-7">
+          <aside>
+            <h3 class="font_noto font-extrabold text-4xl text-[#7DFF7D]">JobsPortal</h3>
+            <p class="text-xl font_noto">AI Based Jobs Portal</p>
+          </aside>
+          <nav>
+            <h6 class="footer-title">Services</h6>
+            <a class="link link-hover">Branding</a>
+            <a class="link link-hover">Design</a>
+            <a class="link link-hover">Marketing</a>
+            <a class="link link-hover">Advertisement</a>
+          </nav>
+          <nav>
+            <h6 class="footer-title">Company</h6>
+            <a class="link link-hover">About us</a>
+            <a class="link link-hover">Contact</a>
+            <a class="link link-hover">Jobs</a>
+            <a class="link link-hover">Press kit</a>
+          </nav>
+          <nav>
+            <h6 class="footer-title">Legal</h6>
+            <a class="link link-hover">Terms of use</a>
+            <a class="link link-hover">Privacy policy</a>
+            <a class="link link-hover">Cookie policy</a>
+          </nav>
         </footer>
+      
         <div class="text-center text-gray-300 pb-10">
-            <p>© 2024 Jobs Portal Designed By Md Al Fuad</p>
+          <p>© 2024 Jobs Portal Designed By Md Al Fuad</p>
         </div>
-
-    </footer>
+      </footer>
 </body>
 
 </html>
